@@ -77,6 +77,8 @@ class Armazenamento {
 		f = null;
 		arl.clear();
 	}
+
+	//testesteste
 }
 
 
