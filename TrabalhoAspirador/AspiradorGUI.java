@@ -14,9 +14,9 @@ interface InterfaceGraficoUI
 
 }
 
-class GraficoUI extends JFrame implements InterfaceGraficoUI
+class GraficoUI extends JFrame implements InterfaceGraficoUI //GraficoUI herda as caracteristicas do JFrame e insere no InterfaceGraficoUI
 {
-    public GraficoUI(String titulo)
+    public GraficoUI(String titulo) //Metodo Construtor
     {
         //TODO Auto-generated construtor stub
         super(titulo);
@@ -26,9 +26,9 @@ class GraficoUI extends JFrame implements InterfaceGraficoUI
 
     public void sensorParede(){};
 
-    public void moverAspirador(int linha, int coluna){};
+    public void moverAspirador(int linha, int coluna){};//Polimorfismo
 
-    public void moverAspirador(int linha, int coluna, String direcao){};
+    public void moverAspirador(int linha, int coluna, String direcao){};//Polimorfismo
 
     public void mudarDirecaoAspirador(String direcao){};
 
@@ -41,15 +41,15 @@ class GraficoUI extends JFrame implements InterfaceGraficoUI
     public void acaoRealizar(){};
 }
 
-class GUI extends GraficoUI
+class GUI extends GraficoUI //Herda os atributos de GraficoUI
 {
-    JPanel sala;
+    JPanel sala;//Sala é uma variavel de referencia de Panel
     JLabel sujeira, parede, mover, direcao, sugador, acao;
     JLabel sujeiras [] [] = new JLabel[5][5];
     JLabel aspirador;
     int linha=0, coluna=0;
 
-    public GUI (String titulo)
+    public GUI (String titulo) //Metodo construtor que executa os comandos
     {
         super(titulo);
         setSize(700, 400);
@@ -59,13 +59,13 @@ class GUI extends GraficoUI
         setVisible(true);
     }
 
-    protected void tempo(int ms)
+    protected void tempo(int ms)//Metodo protegido dentro da classe, só pode ser acessado dentro da propria classe e classes herdadas
     {
-        try
+        try //tentar algo
         {
-            Thread.sleep(ms);
+            Thread.sleep(ms);//faz o programa para por algum milessegundo 
         }
-        catch
+        catch //pegar algo
             (InterruptedException e){}
     }
 
